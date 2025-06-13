@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javista</title>
+    <link rel="stylesheet" href="CSS/main.css" />
+    <script src="Java Script/six1.js " defer></script>
+    <script src="Java Script/seventh.js " defer></script>
+    <!-- 8 lab -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- 8 lab -->
+</head>
+<body>
+    <a href="mainPage.html">
+        <div class="image-up"></div>
+    </a>
+    <header id="main-header" class="site-header" data-role="navigation">
+        <nav>
+            <a href="courses.html" title="View Courses">Courses</a>
+            <a href="infoPage.html" title="View Info">Info</a>
+        </nav>
+    </header>
+
+    <section id="about" class="about-section">
+        <h1 id="about-title">What's Javista all about?</h1>
+        <div class="features">
+            <div class="feature" data-category="info">
+                <h3>All on one place.</h3>
+                <p>Everything you need, in one secure platform.</p>
+            </div>
+            <div class="feature" data-category="alerts">
+                <h3>Get daily alerts.</h3>
+                <p>Stay updated with real-time notifications.</p>
+            </div>
+            <div class="feature" data-category="security">
+                <h3>Safe and secure.</h3>
+                <p>Your data is protected with top encryption.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="data-container"></div>
+
+    <section id="track" class="track-section" data-role="automation">
+
+        <div class="track-section">
+            <img src="image.svg" class="track-section" alt="NO PHOTO" />
+
+            <div class="track-section-text">
+                <h2> Set, forget, and then track.</h2>
+                <p>Choose a direction, study step by step and achieve your goals.</p>
+                <ul class="custom-list">
+                    <li>
+                        <img src="checkMark.svg" alt="✔" class="check-icon">
+                        Understand which technologies are important
+                    </li>
+                    <li>
+                        <img src="checkMark.svg" alt="✔" class="check-icon">
+                        Follow proven learning paths
+                    </li>
+                    <li>
+                        <img src="checkMark.svg" alt="✔" class="check-icon">
+                        Master skills without chaos and wasted time
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="automation" class="automation-section">
+        <h2>Your tasks, automated.</h2>
+        <div class="task-grid">
+            <div class="task" data-feature="options">
+                <img src="options.svg" alt="Nothing" />
+                <h3>Learn your options.</h3>
+                <p>Understand what works best for you.</p>
+            </div>
+            <div class="task" data-feature="updates">
+                <img src="automate.svg" alt="Nothing" />
+                <h3>Stay informed.</h3>
+                <p>Get the latest updates and insights.</p>
+            </div>
+            <div class="task" data-feature="automation">
+                <img src="informed.svg" alt="Nothing" />
+                <h3>Automate it all.</h3>
+                <p>Let our platform handle the tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8 lab -->
+
+    <section id="vue-app">
+        <div id="app">
+            <!-- Одностороннее связывание -->
+            <h2>{{ title }}</h2>
+
+            <!-- Двустороннее связывание -->
+            <input v-model="newItem" placeholder="Добавь элемент в список" />
+            <button @click="addItem">Добавить</button>
+
+            <!-- Условная отрисовка -->
+            <p v-if="items.length === 0">Список пуст</p>
+
+            <!-- Вывод массива данных -->
+            <ul v-else>
+                <li v-for="(item, index) in items" :key="index">
+                    {{ index + 1 }}. {{ item }}
+                    <!-- А тут клик -->
+                    <button @click="removeItem(index)">Удалить</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 8 lab -->
+
+
+
+    <footer class="footer">
+        <div class="footer__section footer__brand">
+            <p>Built by <a href="https://vk.com/roubeq">Artem Blinov</a></p>
+            <img src="logo.png" alt="Javista Logo" class="footer__logo">
+            <p>Javista</p>
+        </div>
+
+        <div class="footer__section footer__info">
+            <h3>Info</h3>
+            <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__section footer__admin">
+            <h3>Admin</h3>
+            <ul>
+                <li><a href="#">Style Guide</a></li>
+                <li><a href="#">Licenses</a></li>
+                <li><a href="#">Instructions</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__section footer__newsletter">
+            <h3>Newsletter</h3>
+            <p>Sign up for the latest news, company insights, and Whirl updates.</p>
+            <form class="feedback-form">
+                <label for="first-name">Имя:</label>
+                <input type="text" id="first-name" name="first-name" required>
+
+                <label for="last-name">Фамилия:</label>
+                <input type="text" id="last-name" name="last-name" required>
+
+                <label for="review">Отзыв:</label>
+                <textarea id="review" name="review" rows="4" required></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+
+        </div>
+    </footer>
+    <footer class="all-rights">
+        <p>&copy; 2023 All rights reserved.</p>
+    </footer>
+
+    <!-- 8 lab -->
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    title: 'Введите свой язык(библиотеку, технологию, язык программирования), который хотели бы видеть в качестве roadmap на нашем сайте ',
+                    newItem: '',
+                    items: [
+                        'HTML',
+                        'CSS',
+                        'JavaScript',
+                        'Vue.js',
+                        'React',
+                        'Node.js',
+                        'Express',
+                        'MongoDB',
+                        'Git',
+                        'Webpack'
+                    ]
+                };
+            },
+            methods: {
+                addItem() {
+                    if (this.newItem.trim() !== '') {
+                        this.items.push(this.newItem.trim());
+                        this.newItem = '';
+                    }
+                },
+                removeItem(index) {
+                    this.items.splice(index, 1);
+                }
+            }
+        }).mount('#app');
+    </script>
+    <!-- 8 lab -->
+
+
+</body>
+</html>

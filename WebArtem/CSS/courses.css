@@ -1,0 +1,278 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Хедер */
+.site-header {
+    position: absolute;
+    height: 75px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    top: 0;
+}
+
+    .site-header nav a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+.image-up {
+    width: 222px;
+    height: 186px;
+    background-image: url('../logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline;
+        margin-right: 15px;
+    }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+            nav ul li a:hover {
+                text-decoration: underline;
+            }
+
+/* Стили для основного контента */
+main {
+    padding: 20px;
+}
+
+.course-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .course-details h2 {
+        margin-top: 0;
+    }
+
+.course-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.course-description {
+    line-height: 1.6;
+}
+
+.course-topics {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+    .course-topics li {
+        margin-bottom: 10px;
+    }
+
+.enroll-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    margin-bottom: 35px;
+}
+
+    .enroll-button:hover {
+        background-color: #218838;
+    }
+
+/* Футер */
+.footer {
+    background: #f8f8f8;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.footer__section {
+    flex: 1 1 200px;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer__brand img {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.footer__section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer__section ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer__section ul li a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s;
+    }
+
+        .footer__section ul li a:hover {
+            color: #007bff;
+        }
+
+/* Форма обратной связи */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+    .feedback-form input,
+    .feedback-form textarea {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .feedback-form button {
+        background: #2b7db7;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+        .feedback-form button:hover {
+            background: #1a5a85;
+        }
+
+.all-rights {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Медиа-запросы для адаптивности */
+
+/* Для экранов с шириной менее 768px (планшеты и мобильные устройства) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .course-details {
+        padding: 15px;
+    }
+
+    .course-image {
+        margin: 15px 0;
+    }
+
+    .enroll-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}
+
+
+
+/* Для экранов с шириной менее 480px (мобильные устройства) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+    .course-details {
+        padding: 10px;
+    }
+
+    .course-image {
+        margin: 10px 0;
+    }
+
+    .course-description {
+        font-size: 14px;
+    }
+
+    .course-topics {
+        padding-left: 15px;
+    }
+
+        .course-topics li {
+            font-size: 14px;
+        }
+
+    .enroll-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+}
